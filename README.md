@@ -13,6 +13,8 @@ Right-click any image and get one copy-ready prompt to recreate it, with your ow
 
 <p><a href="#install">Install from source</a></p>
 
+![Reprompt's popup next to an image, showing the prompt it wrote for it with Copy and Try another model buttons](assets/screenshot.png)
+
 Reprompt turns an image you find on the web into a prompt you can paste into any image model.
 
 - Right-click an image and get one prompt, ready to copy.
