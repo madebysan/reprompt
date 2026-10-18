@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reprompt settings</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="mark" aria-hidden="true"></div>
+        <p class="eyebrow">CHROME EXTENSION</p>
+        <h1 id="page-title">Reprompt</h1>
+        <p class="lede">
+          Secondary-click any webpage image, choose <strong>Create prompt</strong>,
+          then copy the reconstruction prompt from the page.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="connection-title">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">CONNECTION</p>
+            <h2 id="connection-title">Provider</h2>
+          </div>
+          <span id="connection-status" class="status-dot" aria-hidden="true"></span>
+        </div>
+
+        <form id="settings-form">
+          <label for="provider">Send images to</label>
+          <select id="provider" name="provider">
+            <option value="openrouter">OpenRouter (one key, many models)</option>
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic</option>
+            <option value="google">Google</option>
+          </select>
+          <p id="provider-help" class="help"></p>
+
+          <label for="api-key" id="api-key-label">API key</label>
+          <div class="key-row">
+            <input
+              id="api-key"
+              name="api-key"
+              type="password"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="sk-or-v1-…"
+            >
+            <button id="toggle-key" class="secondary" type="button">Show</button>
+          </div>
+          <p class="help">
+            Stored only in this Chrome profile. It is never sent to the webpage.
+            <a id="keys-link" href="https://openrouter.ai/settings/keys" target="_blank" rel="noopener">Get a key</a>
+          </p>
+
+          <div class="actions">
+            <p id="save-status" role="status" aria-live="polite"></p>
+            <button class="primary" type="submit">Save key</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="model-title">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">MODEL</p>
+            <h2 id="model-title">Vision model</h2>
+          </div>
+        </div>
+
+        <div class="model-body">
+          <label for="model">Model for new prompts</label>
+          <select id="model" name="model"></select>
+          <p id="model-note" class="help"></p>
+          <div class="model-row">
+            <p id="catalog-status" class="catalog-status" role="status" aria-live="polite"></p>
+            <button id="refresh-models" class="secondary" type="button">Refresh list</button>
+          </div>
+          <p id="model-help" class="help"></p>
+        </div>
+      </section>
+
+      <aside class="privacy-note">
+        <span aria-hidden="true">◉</span>
+        <p id="privacy-text"></p>
+      </aside>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
